@@ -13,6 +13,7 @@ type FormFields = {
 function Form ({ sendDataToParent, title }) {
     const { register, handleSubmit } = useForm<FormFields>();
     const onSubmit: SubmitHandler<FormFields> = (data) => {
+        console.log("data", data);
         sendDataToParent(data);
     }
 
@@ -24,24 +25,24 @@ function Form ({ sendDataToParent, title }) {
                     <h1>{title}</h1>
                     </div>
                     <div className="form-group">
-                        <input {...register("name", { valueAsNumber: true, required: true })} type="text" placeholder="name" className="form-control"/>
+                        <input {...register("name")} type="text" placeholder="name" className="form-control"/>
                     </div>
                     <div className="form-group">
-                        <input {...register("attack", { valueAsNumber: true, required: true })} className="form-control" type="number" placeholder="attack" />
+                        <input {...register("attack", { valueAsNumber: true})} className="form-control" type="number" placeholder="attack" />
                     </div>
                     <div className="form-group">
-                        <input {...register("defense", { valueAsNumber: true, required: true })} className="form-control" type="number" placeholder="defense" />
+                        <input {...register("defense", { valueAsNumber: true })} className="form-control" type="number" placeholder="defense" />
                     </div>
                     <div className="form-group">
-                        <input {...register("speed", { valueAsNumber: true, required: true })} className="form-control" type="number" placeholder="speed" />
+                        <input {...register("speed", { valueAsNumber: true })} className="form-control" type="number" placeholder="speed" />
                     </div>
                      <div className="form-group">
-                        <input {...register("hp", { valueAsNumber: true, required: true })} className="form-control" type="number" placeholder="hp" />
+                        <input {...register("hp", { valueAsNumber: true })} className="form-control" type="number" placeholder="hp" />
                      </div>
                     <div className="form-group">
                         <input {...register("image_url")} className="form-control" type="text" placeholder="image_url" />
                     </div>
-                    <button style={{ marginTop: '10px' }} type="submit" class="btn btn-primary">Submit</button>
+                    <button style={{ marginTop: '10px' }} type="submit" className="btn btn-primary">Submit</button>
                 </form>
                  </>
     )
