@@ -20,13 +20,13 @@
 
 .divForm {
   display: flex;
-  justifyContent: space-between;
+  justify-content: space-between;
   gap: 20px;
   margin: 20px 0;
 }
 
 .result{
-  marginTop: 40px;
+  margin-top: 40px;
 }
 
 @keyframes logo-spin {

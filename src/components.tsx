@@ -1,4 +1,9 @@
-const Monster = function(name: string, attack: number, defense: number, speed: number, hp: number, image_url:string ) {
-    return { name, attack, defense, speed, hp, image_url  };
-};
+interface Monster {
+    name: string;
+    attack: number;
+    defense: number;
+    speed: number;
+    hp: number;
+    image_url: string;
+}
 export default Monster;
