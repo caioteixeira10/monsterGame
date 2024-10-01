@@ -1,6 +1,4 @@
 import {useEffect, useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Monster from "./components.tsx";
 import Form from "./Components/Form.tsx";
@@ -37,11 +35,11 @@ function App() {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between',  gap: '20px'  }}>
+      <div className="divForm">
           <Form title="Monster 1" sendDataToParent={handleDataFromChild1}></Form>
           <Form title="Monster 2" sendDataToParent={handleDataFromChild2}></Form>
       </div>
-      {winner ? <h1>The winner is: {winner.name}</h1> : null}
+      {winner ? <h1 className="result">The winner is: {winner.name}</h1> : null}
     </>
   )
 }
